@@ -15,14 +15,57 @@
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
         <div class="col-lg-6">
+            <div class="row" style="margin-left:230px;margin-right:30px;">
+                <button type="button" class="btn btn-info fancy-button" style="background-color:#f78d92;border:none;color:black" onclick="setData('all')">Top 20 Overall</button>
+                <button type="button" class="btn btn-info fancy-button" style="background-color:#f78d92;border:none;color:black" onclick="setData('Movie')">All Movies</button>
+                <button type="button" class="btn btn-info fancy-button" style="background-color:#f78d92;border:none;color:black" onclick="setData('TV Show')">All TV Shows</button>
+             </div>
             <div id="graph1"></div>
-            <div id="graph2"></div><br/>
+            <div id="graph2"></div>
         </div>
         <div class="col-lg-6">
             <div id="graph3"></div>
+            <p>Nodes represent actors and links represent movies they acted in together. Hover over a node to see the name of the actor!</p>
         </div>
     </div>
+    <h3>Written Questions</h3>
+    <ol>
+        <li>The first question addressed on the top left is “how many titles per genre are there on Netflix?” 
+            I displayed this using a barograph, which is able to represent different genres on a common axis (count of movies). 
+            Because the overall number of genres is quite large, I added a toggle button so that the visualization would be 
+            less cluttered that allows for visualization of the number of titles per genre by movie genres, tv genres, and
+             overall top 20 genres. The second question addressed on the bottom left is “what is the average runtime of movies
+              by release year?” I chose to use a scatterplot with lines to track the average runtime over time. Each data point 
+              represent the average runtime of movies released that year, and a tooltip can be used to see the exact year and 
+              average runtime values. The third question is addressed on the right side of the page which looks into actors who 
+              acted in the same movies. I thought a network flow graph with nodes representing actors as well as links representing 
+              movies both actors acted in would be the best way of representing this. I filtered down the data for this to just 2019 
+              and using non-international movies. There is still a fair number of data points so I added a tooltip that appears when 
+              hovering over a node to display the actor at that node.
+        </li>
+        <li>D3 was helpful in creating interesting color combinations as it allows for color gradients and designation of color through 
+            other functions. D3 also made it fairly manageable at creating a network graph that would be much harder to create on other 
+            platforms that was necessary for visualizing links between actors. D3 was also helpful being able to integrate different data file types 
+            (.csv and .json), whereas other frameworks or programs require their data to be of certain types or formats. </li>
+        <li>D3 is not the best tool for creating a visualization because all locations for parts of graph like bars or circles are determined 
+            by functions, including those for axes and titles, while other frameworks like matplotlib do most of this work for you. D3 is not 
+            the best tool for creating a visualization because it requires knowledge of Javascript and html that not everyone knows. D3 is also 
+            not the best tool for creating a visualization because it makes switching between types of charts very difficult, so if one 
+            wanted to experiment with the best way of displaying data, one would have to tediously create many graphs. </li>
+        <li>My dashboard is about medium level accessibility. I don’t use many demarcations in color, which means color-blind users won’t be 
+            missing out on information, but more changes in color or textures to denote different nodes or bars could be useful to cleanly separate 
+            data points. As mentioned in the medium article, this dashboard is less accessible to users with adhd and epilepsy as there is an animation 
+            in the nodes that would be better controlled by the user, but currently runs at each page reload. As mentioned in the betterment article, 
+            one large downfall of this dashboard is that it uses tool tips, which the articles states is not helpful because it sometimes cannot be seen 
+            by assistive technology. The bar graph is instead a good example of having some of the data displayed alongside the bars, without using hover overlays. </li>
+        <li>When adding color to my graphs, I wanted to add more colors so that different nodes could be differentiated, or add changes to the node size to indicate 
+            the number of connections and the link thickness to indicate the number of shared movies. I wasn’t entirely sure how to do this in D3 although I saw it in
+             the example, which was my main barrier. Another implementation idea was to label each node with the actor name but with so many nodes I instead chose to
+              use hover tool tips so the graph would not be so cluttered. I think that in data preprocessing I also could have filtered down the node data more so so 
+              that the graph is less cluttered and thus more accessible to all users.</li>
+    </ol>
     <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>
+
 </body>
 </html>

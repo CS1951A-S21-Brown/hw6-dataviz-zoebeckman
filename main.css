@@ -9,4 +9,18 @@
     text-align: center;
 }
 
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    min-width: 60px;					
+    min-height: 28px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background-color: red;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+
 /* Include any custom CSS styling here! */
