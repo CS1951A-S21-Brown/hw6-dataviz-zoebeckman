@@ -304,7 +304,7 @@ let div2 = d3.select("#graph3").append("div")
     .attr("class", "tooltip")				
     .style("opacity", 0);
 
-d3.json("../networkdata.json").then(function(data) {
+d3.json("./hw6-dataviz-zoebeckman/networkdata.json").then(function(data) {
     let link = svg3.append("g")
                     .attr("class","links")
                     .selectAll("line")
